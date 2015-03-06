@@ -31,6 +31,7 @@ require_once("inc/seo.php");
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="Description" content="<?php echo $siteMetaDesc;?>"/>
     <meta name="keywords" content="<?php echo $siteMetaKeywords;?>"/>
+	<link rel="image_src" href="<?php echo $siteMetaImage;?>"/>
 	<title><?php echo $siteTitle;?></title> 
     <meta name="viewport" content="width=200, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'><!-- Include a nice font -->
@@ -49,6 +50,7 @@ require_once("inc/seo.php");
 <div id="headerWrapper">
 	<?php include("header.php");echo $plHeader;?>   
 </div>
+
 <div id="wrapper">   
     <div id="contentWrapper">
    		<div id="subNavWrapper">

@@ -9,7 +9,7 @@ $siteFooter = '©kios27.com';
 $siteMetaDesc = 'Cari kios yang strategis buat jualan online anda? Disini hanya di Kios27.com tempatnya!!! segera gabung dan nikmati keunggulannya';
 $siteMetaKeywords = 'kios-27,situs-belanja-online,jual-beli-sepatu-online,jual-beli-online
 			,membuat-bisnis-online,toko-online,website-toko-online';
-
+$siteMetaImage="img/kios27.com.jpg";
 $theme = "theme_default"; // name of the subfolder in themes directory for the theme you want
 
 /*MOBILE VERSION NOT IN LITE EDITION OF THIS TEMPLATE. Go to http://metro-webdesign.info and donate to get the full version!*/
