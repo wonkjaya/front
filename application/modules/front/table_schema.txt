@@ -1,0 +1,45 @@
+## METAS ##
+* ID #			// INT(autoInt) =>
+* page_id		// INT(11)
+* name			// varchar(30)
+* default_meta	// TEXT
+  {
+	array(
+		title => '',				// title dengan jumlah kharakter max 70;
+		description => '',			//description tidak boleh lebih dari 150 karakter;
+		keywords => '',				// keywords gunakan tanda "-" untuk pengganti spasi;
+		author(google+) => '',		// author diisi dengan url profile google+ jika ada(optional)
+		robots => ''				// robots isinya "index,follow" dan "noindex,nofollow"
+	)
+  }
+* fb_meta 		// TEXT
+  {
+	array(
+		og_title,			// title ini akan muncul jika content di share menggunakan facebook;
+		og_type,			// type ini yang menentukan bagaimana tampilan posting saat dishare;
+		og_image,			// image ini ditampilkan saat facebook meload url yang dimasukkan;
+		og_url,				// url ini akan muncul setelah judul pada content share facebook;
+		og_site_name,		// untuk sitename hindarkan menulis dengan ".com/id/etc" usahakan jangan menggunakan extensi domain, cukup nama websitenya saja, ex "kios27"
+		og_description		// diskrisi ini akan muncul ketika kita share link pada facebook.
+	)
+  }
+* twt_meta 			// TEXT
+  {
+	array(
+		twitter_card,			//
+		twitter_url,			//
+		twitter_title,			// kurang lebih hampir sama dengan fb meta hanya saja ini berfungsi jika disebarkan lewat twitter.
+		twitter_description,	//
+		twitter_image			//
+	)
+  }
+  
+ gp_meta
+  {
+	array(
+		pagetype,
+		name,
+		description,
+		image
+	)  
+  }

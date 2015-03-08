@@ -24,7 +24,7 @@
 			 <li class='glyphicon glyphicon-bullhorn' style='display:block;padding:15px;'> 
 				<span class='li'>Media Terlengkap Untuk Promosi produk anda</span></li>
 			</ul>
-		  <h2 class='btn btn-primary btn-lg active'>DAFTAR</h2>
+		  <h2 class='btn btn-primary btn-lg active'>DAFTARKAN SEKARANG</h2>
 		</div>
 	  </div>
 	</div>
