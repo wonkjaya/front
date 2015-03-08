@@ -11,7 +11,7 @@
 .menu:hover{background:#6211B0;}
 #active{background:#F90;}
 .menu img{height:40px;width:40px;margin:17px 14px;}
-li{padding:5px;height:30px;}
+.li{height:30px;font-size:20px;}
 </style>
 <head>
  <title><?php if(isset($title))echo $title; else echo "untitle";?></title>
