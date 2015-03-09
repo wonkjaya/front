@@ -24,7 +24,8 @@
 			 <li class='glyphicon glyphicon-bullhorn' style='display:block;padding:15px;'> 
 				<span class='li'>Media Terlengkap Untuk Promosi produk anda</span></li>
 			</ul>
-		  <h2 class='btn btn-primary btn-lg active'>DAFTARKAN SEKARANG</h2>
+		  <h2 class='btn btn-primary btn-lg active' id='signup'>DAFTAR SEKARANG</h2>
+		  <h2 class='btn btn-warning btn-lg active' id='shop_list'>LIHAT TOKO LAIN</h2>
 		</div>
 	  </div>
 	</div>
@@ -32,3 +33,12 @@
   </div>
   <div class="col-md-2"></div>
 </div>
+<script>
+ $('#signup').click(function(){
+  window.location="<?=site_url('front/signup')?>";
+ });
+ 
+ $('#shop_list').click(function(){
+  window.location="<?=site_url('front/shop_list')?>";
+ });
+</script>

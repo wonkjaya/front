@@ -13,14 +13,16 @@ a.menu:hover{text-decoration:none;background:#6211B0;color:#fff;}
 .menu img{height:40px;width:40px;margin:17px 14px;}
 .li{height:30px;font-size:20px;}
 #linkchat,.chat{position:absolute;right:0px;text-decoration:none;}
-#linkchat{top:20%;font-size:50px;color:#fff;background:#234;padding:10px;}
-.chat{width:250px;border:1px solid;margin-top:60px;height:60%;bottom:0px;}
+#linkchat{top:20%;font-size:50px;color:#fff;background:#470E7C;padding:10px;}
+.chat{width:250px;border:1px solid;margin-top:60px;height:60%;bottom:0px;background:#fff;}
+.bg_info{margin-top:5px;}
 </style>
 
 <head>
  <?php echo link_tag('assets/css_file/bootstrap.min.css'); ?>
  <?php echo link_tag("assets/css_file/style.css"); ?>
  <link rel="icon" type="image/x-icon" href="<?=base_url('assets/images/icon.png')?>">
+ <script src="<?=base_url('assets/js_file/jquery.js')?>">//http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js</script>
  <?=metas($metadatas)?><?php //print_t($metadatas);?>
 </head>
 	   <?php 

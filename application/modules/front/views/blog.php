@@ -25,6 +25,7 @@
 				<span class='li'>FREE optimasi SEO dari kami</span></li>
 			</ul>
 		  <h2 class='btn btn-primary btn-lg active'>DAFTARKAN SEKARANG</h2>
+		  <h2 class='btn btn-primary btn-lg active'>LIHAT BLOG</h2>
 		</div>
 	  </div>
 	</div>

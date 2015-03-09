@@ -21,7 +21,7 @@
 				<span class='li'>Dapatkan ONLINE support Full time Dari kami</span></li>
 			</ul>
 		  <h2 class='btn btn-primary btn-lg active'>Hubungi Kami</h2>
-		  <h2 class='btn btn-warning btn-lg active'> Chat Kami</h2>
+		  <h2 class='btn btn-warning btn-lg active' id='bchat'> Chat Kami</h2>
 		  <h2 class='btn btn-danger btn-lg active'>Masukkan Saran</h2>
 		</div>
 	  </div>
