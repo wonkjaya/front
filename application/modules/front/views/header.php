@@ -12,7 +12,11 @@ a.menu:hover{text-decoration:none;background:#6211B0;color:#fff;}
 #active{background:#F90;}
 .menu img{height:40px;width:40px;margin:17px 14px;}
 .li{height:30px;font-size:20px;}
+#linkchat,.chat{position:absolute;right:0px;text-decoration:none;}
+#linkchat{top:20%;font-size:50px;color:#fff;background:#234;padding:10px;}
+.chat{width:250px;border:1px solid;margin-top:60px;height:60%;bottom:0px;}
 </style>
+
 <head>
  <?php echo link_tag('assets/css_file/bootstrap.min.css'); ?>
  <?php echo link_tag("assets/css_file/style.css"); ?>
@@ -26,7 +30,8 @@ a.menu:hover{text-decoration:none;background:#6211B0;color:#fff;}
 				   'style'=>'margin-top: -15px;'
 				   );
 	    ?>
-<body>
+<body id='body'>
+
  <div class="row" style="background:#470E7C;min-height:110px;">
   <div class="col-xs-12 col-md-12">
 	<div class="row">

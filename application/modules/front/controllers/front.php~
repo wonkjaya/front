@@ -60,7 +60,7 @@ class Front extends CI_controller{
 	$data['active_page']='help';
 	$data['content']=$this->m->get_content(array('ID'=>$id));
 	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
-	$this->body('help',$data);
+	$this->body('home',$data);
  }
 
 
