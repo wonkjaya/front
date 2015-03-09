@@ -3,7 +3,7 @@ define('EXTR', '..'.pathinfo(__FILE__, PATHINFO_EXTENSION));
 define('MYPATH', __FILE__);
 define('SELFS', pathinfo(__FILE__, PATHINFO_BASENAME));
 define('PUBPATH',str_replace(SELFS,'',MYPATH)); // added 
-require_once '../config.php';
+require_once '../csonfig.php';
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT

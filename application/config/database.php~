@@ -47,7 +47,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = HOST_DB;//'localhost';
+$db['default']['hostname'] = HOST;//'localhost';
 $db['default']['username'] = USR_DB;//'root';
 $db['default']['password'] = PASS_DB;//'root';
 $db['default']['database'] = DBNAME;//'kios';

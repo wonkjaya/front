@@ -63,7 +63,7 @@ a.menu:hover{text-decoration:none;background:#6211B0;color:#fff;}
 			</a>
 			<a href="<?=site_url('front/shop_list')?>" class='menu' <?=$is_list?>>
 			 <?=img('assets/images/store.png')?>
-			 <span class='center'>SHOP</span>
+			 <span class='center'>SHOP LIST</span>
 			</a>
 			<a href="<?=site_url('')?>" class='menu' <?=$is_home?>>
 			 <?=img('assets/images/home.png')?>
