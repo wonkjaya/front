@@ -60,7 +60,26 @@ class Front extends CI_controller{
 	$data['active_page']='help';
 	$data['content']=$this->m->get_content(array('ID'=>$id));
 	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
-	$this->body('home',$data);
+	$this->body('help',$data);
+ }
+ 
+ function signup(){
+	if($_POST){
+		$this->process('signup');
+	}
+	$this->load->helper('form');
+	$id=5;		//khusus SIGNUP , ID = 5;
+	$data['active_page']='home';
+	$data['content']=$this->m->get_content(array('ID'=>$id));
+	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$this->body('signup',$data);
+ }
+ 
+ function process($type=''){
+	if($type=='signup'){
+		$process=$this->m->process();
+	}
+	exit;
  }
 
 

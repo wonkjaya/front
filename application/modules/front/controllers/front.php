@@ -77,27 +77,9 @@ class Front extends CI_controller{
  
  function process($type=''){
 	if($type=='signup'){
-		print_r($_POST);
-		$person_name=$this->input->post('name');
-		$address=$this->input->post('address');
-		$country=$this->input->post('country');
-		$postal_code=$this->input->post('postal_code');
-		$subdomain=$this->input->post('subdomain');
-		$username=$this->input->post('username');
-		$password=$this->input->post('password');
-		$confirm=$this->input->post('confirm');
-		$captcha=$this->input->post('captcha');
-		if($password==$confirm){
-			if(!empty($person_name) and !empty($address) and !empty($country) and !empty($postal_code) and !empty($subdomain)){
-				$data=array('username'=>$username,'password'=>$password,'status'=>2,'code_register'=>md5(date('sdgmsy')));
-				$id=$this->m->insert('users',$data,true);
-				$data=array('user_id'=>$user_id,'name'=>$person_name,'address'=>$address,'country'=>$country,'postalcode'=>$postal_code,'subdomain'=>$subdomain);
-				$this->m->insert('member_account',$data,true);
-				
-			}
-		}
+		$process=$this->m->process();
 	}
-	exit;
+	redirect('front');
  }
 
 

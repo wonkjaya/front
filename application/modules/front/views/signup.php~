@@ -38,7 +38,7 @@
 				<td><?=form_password('password','',' class="form-control"') ?></td>
 			 </tr>
 			 <tr>
-				<td>CONFIRM</td>
+				<td>PASSWORD</td>
 				<td><?=form_password('confirm','','class="form-control"')?></td>
 			 </tr>
 			 <tr>

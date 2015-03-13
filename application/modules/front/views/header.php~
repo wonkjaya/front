@@ -7,7 +7,7 @@
 .col-md-4 h1:hover{color:#F90;cursor:pointer;}
 .col-md-4 h1{color:#FFF;}
 .col-md-4 h2{color:#FFF;font-size:20px;text-indent:45px;}
-a.menu{width:69px;color:#FFF;height:65px;float:right;text-align:center;margin-left:2px;background:#4E0098;border:1px solid #47414C;padding: 2px 0px;}
+a.menu{width:100px;color:#FFF;height:100px;float:right;text-align:center;margin-left:2px;background:#4E0098;border:1px solid #47414C;padding: 2px 15px;}
 a.menu:hover{text-decoration:none;background:#6211B0;color:#fff;}
 #active{background:#F90;}
 .menu img{height:40px;width:40px;margin:17px 14px;}

@@ -39,8 +39,8 @@ class Front_mdl extends CI_Model{
 			$data=array('user_id'=>$user_id,'fullname'=>$person_name,'address'=>$address,'city'=>$country,
 					'postalcode'=>$postal_code);
 			$this->insert('member_account',$data,true);
-			$data=array('user_id'=>$user_id,'store_url'=>$subdomain);
-			$this->insert('store_list',$data);
+			$data=array('user_id'=>$user_id,'subdomain'=>$subdomain);
+			$this->insert('store_url',$data);
 			return 1;
 		}else{
 			return "Maaf Tidak Boleh Ada Yang kosong!";
