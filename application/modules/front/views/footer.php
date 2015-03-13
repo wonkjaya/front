@@ -20,28 +20,7 @@
 		<input name='text_chat' style='width:100%;' placeholder='masukkan text'/>
 	 </div>
 <body>
-
- <script>
-  	$( window ).resize(function() {
-	  change_position('#linkchat');
-	});
-	function change_position(id){
-	 var width = document.getElementById('body').offsetWidth;
-	  if(width <= 992){
-	  	$(id).attr('style','top:0px');
-	  }else{
-	  	$(id).attr('style','top:20%');
-	  }
-	}
-	$('.chat').hide();
-	$('#linkchat,#bchat').click(function(){
-	 $('.chat').show('slide');
-	 $('#linkchat').hide('slowly');
-	});
-	$('#close_chats').click(function(){
-	 $('.chat').hide('fade');
-	 $('#linkchat').show('bounce');
-	});
- </script>
  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54fe708902ad6cf2" async="async"></script>
+ 
+<script type='text/javascript' src="<?=base_url('assets/js_file/functions.js')?>"></script>
+<!--script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-54fe708902ad6cf2" async="async"></script-->

@@ -45,10 +45,14 @@
 				<td>CAPTCHA</td>
 				<td><?/*=img($captcha).nbs(2).form_input('captcha','','style="width:40%;"')*/?></td>
 			 </tr>
+			 <tr>
+				<td></td>
+				<td><h2 class='btn btn-primary btn-lg active' id='signup'>DAFTAR</h2>
+				</td>
+			 </tr>
 			</table>
 			<?=form_close()?>
-		  <h2 class='btn btn-primary btn-lg active' id='signup'>DAFTAR</h2>
-		  <h2 class='btn btn-warning btn-lg active' id='shop_list'>LIHAT TOKO LAIN</h2>
+		   
 		</div>
 	  </div>
 	</div>
@@ -56,4 +60,3 @@
   </div>
   <div class="col-md-2"></div>
 </div>
-<script type='text/javascript' src="<?=base_url('assets/js_file/functions.js')?>"></script>

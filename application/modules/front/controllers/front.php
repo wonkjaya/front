@@ -34,32 +34,32 @@ class Front extends CI_controller{
  function home(){
 	$id=1;		//khusus HOME , ID = 1;
 	$data['active_page']='home';
-	$data['content']=$this->m->get_content(array('ID'=>$id));
-	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$data['content']=$this->m->get_content($id);
+	$data['metadatas']=$this->m->metas($id);
 	$this->body('home',$data);
  }
  
  function shop_list(){
 	$id=2;		//khusus SHOP , ID = 2;
 	$data['active_page']='list';
-	$data['content']=$this->m->get_content(array('ID'=>$id));
-	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$data['content']=$this->m->get_content($id);
+	$data['metadatas']=$this->m->metas($id);
 	$this->body('shop_list',$data);
  }
  
  function artikel_list(){
 	$id=3;		//khusus BLOG , ID = 3;
 	$data['active_page']='blog';
-	$data['content']=$this->m->get_content(array('ID'=>$id));
-	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$data['content']=$this->m->get_content($id);
+	$data['metadatas']=$this->m->metas($id);
 	$this->body('blog',$data);
  }
  
  function help(){
 	$id=4;		//khusus HELP , ID = 4;
 	$data['active_page']='help';
-	$data['content']=$this->m->get_content(array('ID'=>$id));
-	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$data['content']=$this->m->get_content($id);
+	$data['metadatas']=$this->m->metas($id);
 	$this->body('help',$data);
  }
  
@@ -70,8 +70,8 @@ class Front extends CI_controller{
 	$this->load->helper('form');
 	$id=5;		//khusus SIGNUP , ID = 5;
 	$data['active_page']='home';
-	$data['content']=$this->m->get_content(array('ID'=>$id));
-	$data['metadatas']=$this->m->metas(array('page_id'=>$id));
+	$data['content']=$this->m->get_content($id);
+	$data['metadatas']=$this->m->metas($id);
 	$this->body('signup',$data);
  }
  
@@ -80,6 +80,10 @@ class Front extends CI_controller{
 		$process=$this->m->process();
 	}
 	redirect('front');
+ }
+ 
+ function login_member(){
+ 	
  }
 
 
