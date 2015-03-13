@@ -83,7 +83,7 @@ class Front extends CI_controller{
  }
  
  function login_member(){
- 	
+ 	echo json_encode(site_url('assets/images/profile_pic/kios.png'));
  }
 
 
