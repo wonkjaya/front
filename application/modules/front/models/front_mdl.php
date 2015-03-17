@@ -7,6 +7,10 @@ class Front_mdl extends CI_Model{
 	return $this->get($table,$param,true);
   }
   
+  function post($var=''){
+  	if($var !== '') return $this->input->post($var);
+  }
+  
   function get_uid(){
   	return 1;
   }
@@ -31,16 +35,17 @@ class Front_mdl extends CI_Model{
   
   function process(){
   	$user_id=$this->get_uid();
-  	$person_name=$this->input->post('name');
-	$address=$this->input->post('address');
-	$country=$this->input->post('country');
-	$postal_code=$this->input->post('postal_code');
-	$subdomain=$this->input->post('subdomain');
-	$username=$this->input->post('username');
-	$password=$this->input->post('password');
-	$confirm=$this->input->post('confirm');
-	$captcha=$this->input->post('captcha');
-	if($password==$confirm){
+  	$person_name=$this->post('name');
+	$address=$this->post('address');
+	$country=$this->post('country');
+	$postal_code=$this->post('postal_code');
+	$subdomain=$this->post('subdomain');
+	$username=$this->post('username');
+	$password=$this->post('password');
+	$confirm=$this->post('confirm');
+	$captcha=$this->post('captcha');
+	$answr=$this->session->flashdata('cpt')[1];
+	if($password==$confirm and $captcha==$answr){
 		if(!empty($person_name) and !empty($address) and !empty($country) and !empty($postal_code) and !empty($subdomain)){
 			$data=array('username'=>$username,'password'=>$password,'status'=>2,'user_verification'=>md5(date('sdgmsy')));
 			$id=$this->insert('users',$data,true);
@@ -56,6 +61,33 @@ class Front_mdl extends CI_Model{
 	}else{
 		return "harus cocok";
 	}
+  }
+  
+  function login_member(){
+  	$username=$this->post('userkios');
+  	$password=$this->post('passkios');
+  	$res=$this->auth($username,$password);
+  	return $res;
+  }
+  
+  function auth($username,$password){
+  	$data=$this->get_data_from_user($username);
+  	foreach($data->result() as $r){
+  		$pass=$this->encrypt->decode($r->password);
+  		$state=$r->status;
+	  	if($state == 0){
+	  		return 0;			// email belum diverifikasi
+	  	}elseif($state == 1){
+	  		if($pass == $password){
+	  			return $username;	//berhasil masuk
+	  		}else{
+	  			return 404;		// username atau password salah!
+	  		}
+	  	}elseif($state == 2){
+	  		return 2;			//akun terbanned
+	  	}
+  	}
+  	exit;
   }
  
 

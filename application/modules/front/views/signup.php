@@ -43,7 +43,8 @@
 			 </tr>
 			 <tr>
 				<td>CAPTCHA</td>
-				<td><?/*=img($captcha).nbs(2).form_input('captcha','','style="width:40%;"')*/?></td>
+				<td><?php echo $captcha.br().
+					form_input('captcha','','style="width:100%;" class="form-control"')?></td>
 			 </tr>
 			 <tr>
 				<td></td>
