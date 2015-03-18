@@ -44,7 +44,8 @@ class Front_mdl extends CI_Model{
 	$password=$this->post('password');
 	$confirm=$this->post('confirm');
 	$captcha=$this->post('captcha');
-	$answr=$this->session->flashdata('cpt')[1];
+	echo $answr=$this->session->flashdata('c_jwb');
+	exit;
 	if($password==$confirm and $captcha==$answr){
 		if(!empty($person_name) and !empty($address) and !empty($country) and !empty($postal_code) and !empty($subdomain)){
 			$data=array('username'=>$username,'password'=>$password,'status'=>2,'user_verification'=>md5(date('sdgmsy')));
@@ -79,7 +80,7 @@ class Front_mdl extends CI_Model{
 	  		return 0;			// email belum diverifikasi
 	  	}elseif($state == 1){
 	  		if($pass == $password){
-	  			return $username;	//berhasil masuk
+		 			$this->session->set_userdata('userkios',$username); //berhasil masuk
 	  		}else{
 	  			return 404;		// username atau password salah!
 	  		}

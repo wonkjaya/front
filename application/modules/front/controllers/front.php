@@ -25,6 +25,12 @@ class Front extends CI_controller{
 	}
  }
  
+ function get_username($is_id=false){
+ 	if ($is_id == true) return 1;
+ 	
+ 	return $this->session->userdata('userkios');
+ }
+ 
  function body($filename='',$data){
 	$this->header($data);
 	$this->load->view($filename,$data);
@@ -70,11 +76,9 @@ class Front extends CI_controller{
 		exit;
 	}
 	$this->load->helper('form');
-	$captcha=array('siapa nama orang tuamu?','rohman');
-	$data['captcha']=$captcha[0];
-	$this->session->set_flashdata('cpt',$captcha);
+	$data['captcha']=$this->captcha();
 	$id=5;		//khusus SIGNUP , ID = 5;
-	$data['session']=$this->session->flashdata('cpt');
+	$data['session']=$this->session->flashdata('c_soal');
 	$data['active_page']='home';
 	$data['content']=$this->m->get_content($id);
 	$data['metadatas']=$this->m->metas($id);
@@ -96,14 +100,25 @@ class Front extends CI_controller{
  function login_member(){
  	if($_POST){
  		$this->load->library('encrypt');
- 		$response=$this->m->login_member();
- 		if($response == 1){
- 		
- 		}
+ 		$this->m->login_member();
  	}
  	$id=6;		//khusus SIGIN , ID = 5;
  	$data['metadatas']=$this->m->metas($id);
  	$this->load->view('login_member',$data);
+ }
+ 
+ function captcha(){
+ 	$captcha[]=array('1,2,3,4,5,...','6');
+ 	$captcha[]=array('2,4,6,8,...','10');
+ 	$captcha[]=array('...,3,4,5,6','2');
+ 	$captcha[]=array('1,3,6,...,12','9');
+ 	$captcha[]=array('10,12,14,...','16');
+ 	$number=rand(0,4);
+	$c_soal=$captcha[$number][0];
+	$c_jwb=$captcha[$number][1];
+	$this->session->set_flashdata('c_soal',$c_soal);
+	$this->session->set_flashdata('c_jwb',$c_jwb);
+	return $c_soal;
  }
 
 

@@ -43,7 +43,7 @@
 			 </tr>
 			 <tr>
 				<td>CAPTCHA</td>
-				<td><?php echo $captcha.br().
+				<td><?php echo ucfirst($captcha).'. Berapa nilai (...) disamping?'.br().
 					form_input('captcha','','style="width:100%;" class="form-control"')?></td>
 			 </tr>
 			 <tr>
