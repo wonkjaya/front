@@ -44,8 +44,7 @@ class Front_mdl extends CI_Model{
 	$password=$this->post('password');
 	$confirm=$this->post('confirm');
 	$captcha=$this->post('captcha');
-	echo $answr=$this->session->flashdata('c_jwb');
-	exit;
+	$answr=$this->session->flashdata('c_jwb');
 	if($password==$confirm and $captcha==$answr){
 		if(!empty($person_name) and !empty($address) and !empty($country) and !empty($postal_code) and !empty($subdomain)){
 			$data=array('username'=>$username,'password'=>$password,'status'=>2,'user_verification'=>md5(date('sdgmsy')));
@@ -60,7 +59,7 @@ class Front_mdl extends CI_Model{
 			return "Maaf Tidak Boleh Ada Yang kosong!";
 		}
 	}else{
-		return "harus cocok";
+		return "Semua kolom harus sesuai!!! Coba Kembali";
 	}
   }
   
@@ -81,14 +80,21 @@ class Front_mdl extends CI_Model{
 	  	}elseif($state == 1){
 	  		if($pass == $password){
 		 			$this->session->set_userdata('userkios',$username); //berhasil masuk
+		 			return 1;
 	  		}else{
 	  			return 404;		// username atau password salah!
 	  		}
 	  	}elseif($state == 2){
-	  		return 2;			//akun terbanned
+	  		return 2;			//akun banned
 	  	}
   	}
-  	exit;
+  	return 404;
+  }
+  
+  function get_data_from_user($username){
+  	$this->db->where('username',$username);
+  	$q=$this->db->get('users');
+  	return $q;
   }
  
 

@@ -79,6 +79,7 @@ class Front extends CI_controller{
 	$data['captcha']=$this->captcha();
 	$id=5;		//khusus SIGNUP , ID = 5;
 	$data['session']=$this->session->flashdata('c_soal');
+	$data['error']=$this->session->flashdata('error');
 	$data['active_page']='home';
 	$data['content']=$this->m->get_content($id);
 	$data['metadatas']=$this->m->metas($id);
@@ -88,21 +89,35 @@ class Front extends CI_controller{
  function process($type=''){
 	if($type=='signup'){
 		$process=$this->m->process();
-	}
-	if($process == 1){
-		redirect('front/success');
-	}else{
-		echo 'terjadi kesalahan! harap periksa kembali dan refresh halaman.';
+		if($process == 1){
+			redirect('front/success');
+		}else{
+			$this->session->set_flashdata('error',$process);
+			redirect('front/signup');
+		}
 	}
 	exit;
  }
  
  function login_member(){
+ 	$this->load->library('session');
  	if($_POST){
  		$this->load->library('encrypt');
- 		$this->m->login_member();
+ 		$res=$this->m->login_member();
+ 		if($res == 1){
+ 		 redirect('member');
+ 		}elseif($res == 0){
+ 			$err='Cek email Anda untuk verifikasi!';
+ 		}elseif($res == 2){
+ 			$err=br(2).'Maaf akun anda dinonaktifkan!! Hubungi <a href="mailto:admin@kios27.com">Administrator</a>';
+ 		}else{	// 404
+ 			$err='Username dan Password salah!';
+ 		}
+ 		$this->session->set_flashdata('login_error',$err);
+ 		redirect('front/login_member');
  	}
  	$id=6;		//khusus SIGIN , ID = 5;
+	$data['error']=$this->session->flashdata('login_error');
  	$data['metadatas']=$this->m->metas($id);
  	$this->load->view('login_member',$data);
  }

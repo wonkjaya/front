@@ -9,6 +9,10 @@
 		  <?=form_open()?>
 			<table class='table' style='width:70%'>
 			 <tr>
+				<td></td>
+				<td style="color:red"><?php if($error != '') echo 'ERROR : '.$error;?></td>
+			 </tr>
+			 <tr>
 				<td>NAMA LENGKAP</td>
 				<td><?=form_input('name','','style="width:100%;" class="form-control"')?></td>
 			 </tr>

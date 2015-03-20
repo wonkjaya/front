@@ -9,6 +9,10 @@
 		  <?=form_open()?>
 			<table class='table' style='width:70%'>
 			 <tr>
+				<td></td>
+				<td style="color:red">ERROR : <?=$error?></td>
+			 </tr>
+			 <tr>
 				<td>NAMA LENGKAP</td>
 				<td><?=form_input('name','','style="width:100%;" class="form-control"')?></td>
 			 </tr>
@@ -43,7 +47,7 @@
 			 </tr>
 			 <tr>
 				<td>CAPTCHA</td>
-				<td><?php echo ucfirst($captcha).'. Berapa nilai (...) ini?'.br().
+				<td><?php echo ucfirst($captcha).'. Berapa nilai (...) disamping?'.br().
 					form_input('captcha','','style="width:100%;" class="form-control"')?></td>
 			 </tr>
 			 <tr>

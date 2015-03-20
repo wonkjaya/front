@@ -59,7 +59,7 @@ class Front_mdl extends CI_Model{
 			return "Maaf Tidak Boleh Ada Yang kosong!";
 		}
 	}else{
-		return "harus cocok";
+		return "Semua kolom harus sesuai!!! Coba Kembali";
 	}
   }
   
@@ -80,14 +80,21 @@ class Front_mdl extends CI_Model{
 	  	}elseif($state == 1){
 	  		if($pass == $password){
 		 			$this->session->set_userdata('userkios',$username); //berhasil masuk
+		 			return 1;
 	  		}else{
 	  			return 404;		// username atau password salah!
 	  		}
 	  	}elseif($state == 2){
-	  		return 2;			//akun terbanned
+	  		return 2;			//akun banned
 	  	}
   	}
-  	exit;
+  	return 0;
+  }
+  
+  function get_data_from_user($username){
+  	$this->db->where('username',$username);
+  	$q=$this->db->get('users');
+  	return $q;
   }
  
 
